@@ -1,0 +1,29 @@
+<%- include("./templates/encabezado.ejs")%>
+<!-- usuario.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario</title>
+</head>
+<body>
+
+    <!-- Formulario de inicio de sesión -->
+    <h2>Iniciar Sesión</h2>
+    <form action="/login" method="POST">
+        <label for="usuarioLogin">Usuario:</label>
+        <input type="text" id="usuarioLogin" name="usuario" required>
+        <br>
+        <label for="contrasenaLogin">Contraseña:</label>
+        <input type="password" id="contrasenaLogin" name="password" required>
+        <br>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+
+    <!-- Enlace para registrarse -->
+    <p>¿No tienes una cuenta? <a href="/registro">Regístrate aquí</a></p>
+</body>
+</html>
+
+<%- include("./templates/pie.ejs")%>

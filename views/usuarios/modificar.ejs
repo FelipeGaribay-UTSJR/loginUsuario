@@ -1,0 +1,24 @@
+<%- include("../templates/encabezado.ejs")%>
+<%- include("../templates/menu.ejs")%>
+<div class="container" mt-3>
+    <form action="/editarUsuario" method="post">
+        <div class="card">
+            <div class="card-head">
+                <h1>Modificar Usuario</h1>
+            </div>
+            <div class="card-body">
+                <input type="hidden" name="id" id="id" value="<%= user.id%>">
+                <input type="hidden" name="passwordAnterior" id="passwordAnterior" value="<%=user.password>">
+                <input type="hidden" name="salt" id="salt" value="<%=user.salt%>"> 
+                <input class="form-control mb-3" value="<%=user.nombre %>" type="text" name="nombre" id="nombre" placeholder="Nombre" autofocus>
+                <input class="form-control mb-3" value="<%=user.usuario %>" type="text" name="usuario" id="usuario" placeholder="Usuario">
+                <input class="form-control mb-3" value="<%=user.password %>" type="password" name="password" id="password" placeholder="Password">
+                <input class="form-control mb-3" value="<%=user.foto %>" type="file" name="foto" id="foto" placeholder="foto">
+            </div>
+            <div class="card-footer">
+                <button class="form-control btn btn-primary">Guardar Cambios</button>
+            </div>
+        </div>
+    </form>
+</div>
+<%- include("../templates/pie.ejs")%>
